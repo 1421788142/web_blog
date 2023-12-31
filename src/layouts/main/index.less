@@ -1,0 +1,48 @@
+.layout-mian{
+    width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
+    &-header{
+        width: 100%;
+        height: 70px;
+        transition: top 0.5s;
+        .layout-mian-menu{
+            border: none;
+            justify-content: center;
+            height: 100%;
+            .ant-menu-item{
+                display: flex;
+                align-items: center !important;
+            }
+        }
+    }
+    .hide{
+        top: -80px;
+    }
+    .show{
+        top: 0;
+    }
+    &-content{
+        width: 100%;
+        margin-top: 70px;
+        background: linear-gradient(to top, #ddd, #ffffff, #fff);
+    }
+    // 回到顶部
+    .custom-back-top{
+        width: 100px;
+        height: 100px;
+        background: none;
+        box-shadow: none;
+        .ant-float-btn-body{
+            background: none;
+            box-shadow: none;
+            .ant-float-btn-content{
+                width: 100%;
+                padding:0;
+            }
+            .ant-float-btn-icon{
+                width: 100%;
+            }
+        }
+    }
+}

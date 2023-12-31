@@ -1,0 +1,1 @@
+export type itemsType = Array<{ title:string, svgName?:string, imgName?:string }>
