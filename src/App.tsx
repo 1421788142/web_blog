@@ -1,16 +1,18 @@
 import { HashRouter } from "react-router-dom";
 import { ConfigProvider, theme, App } from "antd";
 import Router from "@/routers/index";
-import React, { useState, useEffect, memo } from "react";
+import React, { memo } from "react";
 import { connect } from "react-redux";
 import { StoreType } from "./redux/interface";
 import { HappyProvider } from '@ant-design/happy-work-theme';
 import useTheme from "@/hooks/useTheme";
+import AuthRouter from "@/routers/utils/AuthRouter";
+
 const RouterView = memo(()=>{
   return (
-    // <AuthRouter>
+    <AuthRouter>
       <Router />
-    // </AuthRouter>
+    </AuthRouter>
   )
 })
 

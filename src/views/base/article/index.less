@@ -1,0 +1,36 @@
+.article-wrapper{
+    background-color: #f6f8f9;
+    padding: 20px 10px;
+}
+.article{
+    margin-bottom: 20px;
+    &-title{
+        display: grid;
+        grid-template-columns: 4fr auto;
+        align-items: center;
+    }
+    &-content{
+        margin: 1rem 0;
+        &-img{
+            width: 100%;
+            max-width: 450px;
+            height: 100%;
+            border-radius: 20px;
+            float: left;
+            max-height: 300px;
+        }
+        &-desc{
+            font-size: 16px;
+        }
+    }
+    &-content:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    &-footer{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}

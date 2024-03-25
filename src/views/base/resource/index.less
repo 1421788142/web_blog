@@ -1,0 +1,28 @@
+.resource-wrapper{
+    background: linear-gradient(to top, #ddd, #ffffff, #fff);
+    padding-bottom: 20px;
+}
+
+.resource-list{
+    grid-template-columns:  repeat(auto-fill, minmax(23%, 1fr));
+    min-width: 300px;
+    &-item{
+        box-shadow: 0 0 20px #ddd;
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        .title{
+            font-size: 18px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .desc{
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+    }
+}

@@ -33,7 +33,7 @@ const rootRouter:RouteObject[] = [
 ]
 
 const Router = memo(() => {
-	return useRoutes([...rootRouter, ...baseRouter])
+	return useRoutes([...rootRouter, baseRouter])
 })
 
 export default Router

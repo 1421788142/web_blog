@@ -2,7 +2,7 @@ import { Image, Tag } from 'antd'
 import dayjs from 'dayjs'
 import Lan from './Lan'
 import Ecology from './Ecology'
-import Waves from './Waves'
+import Waves from '@/components/Waves'
 import './index.less'
 import { getAssets } from '@/utils'
 import Project from './Project'
@@ -11,9 +11,9 @@ const Home:React.FC = ()=>{
     const age = dayjs().diff('2001-09-12', 'year') 
     const workYear = dayjs().diff('2021-03-01', 'year') 
 
-    return (<div className="">
+    return (<div className="w-full home-wrapper">
         <div className='relative w-full'>
-            <Image preview={false} src={getAssets('/image/home/banner.png')}></Image>
+            <Image preview={false} src={getAssets('/image/banner.png')}></Image>
             <Waves/>
         </div>
         <div className="px-4 md:px-0 flex mt-[100px] md:!mt-[-200px] flex-col blog-wrapper md:flex-row">
@@ -55,7 +55,7 @@ const Home:React.FC = ()=>{
                 <Ecology />
             </div>
         </div>
-        <div className='px-4 blog-wrapper md:px-0'>
+        <div className='w-full px-4 blog-wrapper md:px-0'>
             <Project />
         </div>
     </div>)

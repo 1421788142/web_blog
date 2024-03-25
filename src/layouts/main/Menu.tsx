@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import {  } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Menu } from 'antd';
 import SvgIcon from '@/components/SvgIcon';
+import { useNavigate, useLocation } from 'react-router-dom'
 
 const iconStyle = { width: '20px', height: '20px' };
 
@@ -34,13 +34,18 @@ const items: MenuProps['items'] = [
   },
 ];
 
-const App: React.FC = () => {
-  const [current, setCurrent] = useState('mail');
+const MenuContainer: React.FC = () => {
+  const navigate = useNavigate();
+  const { pathname } = useLocation()
+  const [current, setCurrent] = useState(pathname);
 
   const onClick: MenuProps['onClick'] = (e) => {
-    console.log('click ', e);
-    setCurrent(e.key);
+    navigate(e.key);
   };
+
+  React.useEffect(()=>{
+    setCurrent(pathname)
+  },[ pathname ])
 
   return <Menu
     rootClassName='layout-mian-menu'
@@ -51,4 +56,4 @@ const App: React.FC = () => {
   />;
 };
 
-export default App;
+export default MenuContainer;

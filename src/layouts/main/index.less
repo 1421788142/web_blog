@@ -3,7 +3,7 @@
     height: 100vh;
     overflow-y: auto;
     &-header{
-        width: 100%;
+        width: 100vw;
         height: 70px;
         transition: top 0.5s;
         .layout-mian-menu{
@@ -25,7 +25,18 @@
     &-content{
         width: 100%;
         margin-top: 70px;
-        background: linear-gradient(to top, #ddd, #ffffff, #fff);
+    }
+    &-footer{
+        .link{
+            color: #999;
+        }
+        .link:hover{
+            text-decoration: underline;
+            color: var(--blog-primary-color);
+        }
+        .flex-auto{
+            @apply flex flex-col items-center justify-between md:flex-row my-2;
+        }
     }
     // 回到顶部
     .custom-back-top{
@@ -44,5 +55,83 @@
                 width: 100%;
             }
         }
+    }
+}
+
+// 音乐播放器
+.mucic-controls{
+    background-color: #fff;
+    padding: 10px;
+    display: flex;
+    border-radius: 100px;
+    box-shadow: 0 0 20px #adadad;
+    align-items: center;
+    width: 120px;
+    overflow: hidden;
+    transition: width 0.2s;
+    .anticon{
+        font-size: 1.5em !important;
+        cursor: pointer;
+    }
+    &-info{
+        width: 300px;
+        height: 100px;
+        display: none;
+        margin: 0 10px;
+        .btns{
+            display: flex;
+            align-items: center;
+            .anticon{
+                margin-right: 5px;
+            }
+        }
+    }
+    .close-btn{
+        display: none;
+    }
+    // 旋转
+    &-img{
+        border-radius: 50%;
+        overflow: hidden;
+        position: relative;
+        &-mask{
+            width: 100%;
+            height: 100%;
+            position:absolute;
+            left: 0;
+            top: 0;
+            background-color: #00000080;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 20px;
+            display: none;
+        }
+        &-con.rotate{
+            animation: rotate 5s linear infinite;
+        }
+    }
+    &-img:hover{
+        .mucic-controls-img-mask{
+            display: flex;
+        }
+    }
+}
+
+.mucic-controls.open{
+    width: 450px;
+    .mucic-controls-info{
+        display: block;
+    }
+    .close-btn{
+        display: block;
+    }
+}
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
     }
 }

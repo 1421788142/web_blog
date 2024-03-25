@@ -17,7 +17,7 @@ const Project = ()=>{
       };
       
 
-    return (<div className="mt-4 project">
+    return (<div className="w-full mt-4 project">
         <h1 className="text-center">个人开源项目</h1>
         <div className="project-list">
             { list.map((m,i)=>{
@@ -46,20 +46,20 @@ const Project = ()=>{
                             </div>
                         </div>
                         <div className="imgs w-[100%] md:w-[55%]">
-                        <Carousel autoplay>
-                            <div>
-                                <div style={contentStyle}>1</div>
-                            </div>
-                            <div>
-                                <div style={contentStyle}>2</div>
-                            </div>
-                            <div>
-                                <div style={contentStyle}>3</div>
-                            </div>
-                            <div>
-                                <div style={contentStyle}>4</div>
-                            </div>
-                        </Carousel>
+                            <Carousel autoplay>
+                                <div>
+                                    <div style={contentStyle}>1</div>
+                                </div>
+                                <div>
+                                    <div style={contentStyle}>2</div>
+                                </div>
+                                <div>
+                                    <div style={contentStyle}>3</div>
+                                </div>
+                                <div>
+                                    <div style={contentStyle}>4</div>
+                                </div>
+                            </Carousel>
                         </div>
                     </div>
                 )
